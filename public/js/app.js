@@ -16,7 +16,7 @@ console.log('Client side js script')
      messageOne.textContent = 'Loading...';
      messageTwo.textContent ='';
 
-     fetch(`http://localhost:3000/weather?address=${location}`)
+     fetch(`/weather?address=${location}`)
      .then((response) => {
         // onrejected('Ok')//pass to catch block
           response.json().then((data) =>{
