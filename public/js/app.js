@@ -4,6 +4,7 @@ console.log('Client side js script')
  const search = document.querySelector('input');
  const messageOne = document.querySelector('#message-1');
  const messageTwo = document.querySelector('#message-2');
+ const messageThree = document.querySelector('#message-3');
 
 
  weartherF.addEventListener('submit', (e) => {
@@ -15,6 +16,7 @@ console.log('Client side js script')
 
      messageOne.textContent = 'Loading...';
      messageTwo.textContent ='';
+     messageThree.textContent ='';
 
      fetch(`/weather?address=${location}`)
      .then((response) => {
@@ -26,9 +28,10 @@ console.log('Client side js script')
             }else{
                 messageOne.textContent = data.location;
                 messageTwo.textContent = data.forecast;
+                messageThree.textContent = data.description;
                 
-                console.log(data.location);
-                console.log(data.forecast);
+                //console.log(data.location);
+                //console.log(data.forecast);
             }
         })           
              

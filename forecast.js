@@ -20,9 +20,11 @@ const weather = (coordinates, cb) =>{
             cb(`Sory you can't get ${location} weather...`, undefined);
           }
           else{
+            console.log(response.body.current.weather[0].description);
               const weatherData = {
                   temperature : response.body.current.feels_like,
-                  location:location 
+                  location:location,
+                  description: response.body.current.weather[0].description ? response.body.current.weather[0].description : '' 
               };
               cb(undefined, weatherData);
           }

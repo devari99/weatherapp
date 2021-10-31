@@ -72,6 +72,7 @@ app.get('/weather', (req, res) =>{
         res.send({
           forecast : `${result.temperature}°C`,
           location : result.location,
+          description : result.description,          
           address : req.query.address
         })
       })
@@ -89,5 +90,5 @@ app.get('*', (req, res) => {
 //create server
 
 app.listen(port, () =>{
-    console.log('Server started' +port);
+    console.log('Server started on ' +port);
 })
